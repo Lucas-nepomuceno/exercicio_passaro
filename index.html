@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <title>Exercício do Pássaro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    // Objeto config com as propriedades type, width e height que define o renderizador, a largura e a altura
+    var config = {
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
+        // objeto dentro de config que define as funções do ciclo de jogo
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
+    };
+
+    //variável que cria uma instância do jogo com as configurações acima
+    var game = new Phaser.Game (config);
+
+    //função que carrega os primeiros recursos do game que serão usados em create()
+    function preload () {
+        // carrega o background do jogo
+        this.load.image('background', 'assets/bg_space.png');
+    }
+
+    //função que cria e configura elementos do jogo
+    function create() {
+        // cria o background do jogo com tamanho e escala definidos
+        this.add.image(400,300,'background').setScale(1.2);
+    }
+    //função que repete 
+    function update() {
+
+    }
+
+</script>
+
+</body>
+</html>
+
+
